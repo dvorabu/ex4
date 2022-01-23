@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<script src="js/ex4.js"></script>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>Mars images</title>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-3" >
+      <h4>Hi <%= userName %> </h4>
+      <a class="btn btn-outline-info mt-1" href="/" role="button">Logout</a>
+    </div>
+    <div class="col-12 col-md-6 mt-2" >
+      <div class="card bg-dark text-white">
+        <img src="images/images.jpg" class="card-img" alt="">
+<!--        <div class="card-img-overlay">-->
+          <h5>Mars images browser</h5>
+          <p class="bg-primary">Browser NASA Mars images <br> and save your preferred ons</p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Whom am I
+          </button>
+          <!-- Modal -->
+          <div class="modal fade text-black" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Dvora Buchbinder</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  email:dvorabu@edu.hac.ac.il
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!--      </div>-->
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-12 col-md-6 mt-2" >
+      <h4 class="bg-primary bg-opacity-25">Search for images:</h4>
+      <label for="date" class="form-label" >Date (YYYY-MM-DD) or sol </label>
+      <input class="form-control" id="date" placeholder="YYYY-MM-DD">
+      <div class="text-danger errormessage"></div>
+      <label for="mission" class="form-label" >Select Mission: </label>
+      <select class="form-select" id="mission" aria-label="Default select example">
+        <option value="0" selected>choose a mission:</option>
+        <option value="Curiosity"> Curiosity</option>
+        <option value="Opportunity">Opportunity</option>
+        <option value="Spirit">Spirit</option>
+      </select>
+      <div class="text-danger errormessage"></div>
+      <label for="camera" class="form-label">Select Camera: </label>
+      <select class="form-select" id="camera" aria-label="Default select example">
+        <option value="0" selected>choose a camera:</option>
+        <option value="FHAZ"> FHAZ</option>
+        <option value="RHAZ">RHAZ</option>
+        <option value="MAST">MAST</option>
+        <option value="CHEMCAM"> CHEMCAM</option>
+        <option value="MAHLI">MAHLI</option>
+        <option value="MARDI">MARDI</option>
+        <option value="NAVCAM"> NAVCAM</option>
+        <option value="PANCAM">PANCAM</option>
+        <option value="MINITES">MINITES</option>
+      </select>
+      <div class="text-danger errormessage"></div>
+      <button class="btn btn-outline-info mt-1" type="button" id="add">search</button>
+      <button type="reset" class="btn btn-outline-info mt-1" id="clear">clear form</button>
+    </div>
+    <div class="col-12 col-md-6 mt-2" >
+      <h4 class="bg-primary bg-opacity-25">Saved images:</h4>
+      <div  id="search"></div>
+      <button class="btn btn-outline-info mt-1" type="button" id="deleteAll">delete all</button>
+      <ol class="list-group list-group-numbered" id="saveList">
+
+      </ol>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col mt-2" >
+      <h4 class="bg-primary bg-opacity-25">Search results:</h4>
+      <div class="modal" tabindex="-1" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header btn-info">
+              <h5 class="modal-title ">Some error occurred!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="message">
+              <p>The image is already saved.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4" id="imageList">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
